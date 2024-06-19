@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#wrapper{
+    height:100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 10px;
+}
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    /* important to preserve 3d nature of images*/
+    height:100%;
+    z-index: -1;
+    /* overlapping ke liye hai kaun si image kiske upar aayegi*/
+}
+.background{
+    transform: translateZ(-40px) scale(5);
+    
+}
+.foreground{
+    transform: translateZ(-20px) scale(3);
+}
+.background, .foreground{
+    position: absolute;
+    height:100%;
+    width: 100%;
+    z-index: -1;
+    object-fit:cover;
+    /*fit image in container poori width cover kar legi image*/
+
+
+}
+h1{
+    position: absolute;
+    top:20%;
+    left:50%;
+    transform: translateX(-50%);
+    letter-spacing: 4px;
+    font-size: 10rem;
+    color: white;
+    text-shadow: 0 0 10px rgba(0,0,0,3) ;
+}
